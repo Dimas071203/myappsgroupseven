@@ -3,15 +3,15 @@ from PIL import Image
 import io
 
 # Sidebar - My Member
+st.sidebar.image("logo pu text.jpg")
 st.sidebar.title("My Member")
 st.sidebar.write("Group 7")
 
 # Member Button
-if st.image("logo pu text.jpg"):
-    st.sidebar.button("Show My Members")
-    st.sidebar.image("foto dimas.jpeg", caption="Dimas Andriawan")
-    st.sidebar.image("foto beby.jpeg", caption="Beby")
-    st.sidebar.image("foto viky.jpeg", caption="Viky")
+if st.sidebar.button("Show My Members"):
+    st.sidebar.image("foto dimas.jpeg",width=100, caption="Dimas Andriawan")
+    st.sidebar.image("foto beby.jpeg",width=100, caption="Beby Gunawan")
+    st.sidebar.image("foto viky.jpeg",width=100, caption="Virgiawan Risnanda")
 
 # Main app
 def main():
