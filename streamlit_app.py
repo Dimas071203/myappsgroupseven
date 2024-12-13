@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import io
+from reportlab.pdfgen import canvas
 
 # Sidebar - My Member
 st.sidebar.title("My Member")
@@ -50,5 +51,25 @@ def main():
                     file_name=f"rotated_image.{download_format.lower()}",
                     mime=f"image/{download_format.lower()}"
                 )
+
+            elif download_format == "PDF":
+                # Save the image as PDF in memory
+                pdf_buffer = io.BytesIO()
+                c = canvas.Canvas(pdf_buffer)
+                img_buffer = io.BytesIO()
+                rotated_image.save(img_buffer, format="PNG")
+                img_buffer.seek(0)
+                c.drawImage(Image.open(img_buffer), 0, 0, width=rotated_image.width, height=rotated_image.height)
+                c.save()
+                pdf_buffer.seek(0)
+
+                # Provide download link
+                st.download_button(
+                    label="Download Rotated Image as PDF",
+                    data=pdf_buffer,
+                    file_name="rotated_image.pdf",
+                    mime="application/pdf"
+                )
+
 if __name__ == "__main__":
     main()
