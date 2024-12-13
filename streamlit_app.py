@@ -5,14 +5,14 @@ from reportlab.pdfgen import canvas
 
 # Sidebar - My Member
 st.sidebar.title("My Member")
-st.sidebar.write("Nama Anggota:")
+st.sidebar.write("Group 7")
 st.sidebar.write("- Dimas Andriawan")
 st.sidebar.write("- Beby")
 st.sidebar.write("- Viky")
 
 # Main app
 def main():
-    st.title("Image Rotation App")
+    st.title("Merotasi Gambar menggunakan Python")
 
     # Upload image
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
