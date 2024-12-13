@@ -1,7 +1,6 @@
 import streamlit as st
 from PIL import Image
 import io
-from reportlab.pdfgen import canvas
 
 # Sidebar - My Member
 st.sidebar.title("My Member")
