@@ -50,22 +50,5 @@ def main():
                     file_name=f"rotated_image.{download_format.lower()}",
                     mime=f"image/{download_format.lower()}"
                 )
-
-            elif download_format == "PDF":
-                # Save the image as PDF in memory
-                pdf_buffer = io.BytesIO()
-                c = canvas.Canvas(pdf_buffer)
-                c.drawImage(Image.open(io.BytesIO(rotated_image.tobytes())), 0, 0)
-                c.save()
-                pdf_buffer.seek(0)
-
-                # Provide download link
-                st.download_button(
-                    label="Download Rotated Image as PDF",
-                    data=pdf_buffer,
-                    file_name="rotated_image.pdf",
-                    mime="application/pdf"
-                )
-
 if __name__ == "__main__":
     main()
