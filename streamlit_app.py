@@ -6,18 +6,12 @@ import io
 st.sidebar.title("My Member")
 st.sidebar.write("Group 7")
 
-# Member Buttons
-def display_member_image(member_name):
-    st.sidebar.image(f"{member_name.lower().replace(' ', '_')}.jpg", caption=member_name)
-
-if st.sidebar.button("Dimas Andriawan"):
-    display_member_image("Dimas Andriawan")
-
-if st.sidebar.button("Beby"):
-    display_member_image("Beby")
-
-if st.sidebar.button("Viky"):
-    display_member_image("Viky")
+# Member Button
+if st.image("logo pu text.jpg"):
+    st.sidebar.button("Show My Members")
+    st.sidebar.image("foto dimas.jpeg", caption="Dimas Andriawan")
+    st.sidebar.image("foto beby.jpeg", caption="Beby")
+    st.sidebar.image("foto viky.jpeg", caption="Viky")
 
 # Main app
 def main():
