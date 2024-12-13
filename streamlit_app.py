@@ -22,7 +22,7 @@ def main():
         image = Image.open(uploaded_file)
 
         # Display the uploaded image
-        st.image(image, caption="Uploaded Image", use_column_width=True)
+        st.image(image, caption="Uploaded Image", use_container_width=True)
 
         # Rotation slider
         rotation_angle = st.slider("Select rotation angle (degrees)", 0, 360, 0)
@@ -31,7 +31,7 @@ def main():
         rotated_image = image.rotate(rotation_angle, expand=True)
 
         # Display the rotated image
-        st.image(rotated_image, caption="Rotated Image", use_column_width=True)
+        st.image(rotated_image, caption="Rotated Image", use_container_width=True)
 
         # Download options
         st.subheader("Download Rotated Image")
